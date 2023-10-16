@@ -1,20 +1,25 @@
-function updateClock() {
-    const clockElement = document.getElementById('clock');
-    const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
-    const timeString = `${hours}:${minutes}:${seconds}`;
-    clockElement.textContent = timeString;
+function startCountdown(durationInSeconds) {
+  const countdownElement = document.getElementById("countdown");
+  let remainingTime = durationInSeconds;
+
+  function updateCountdown() {
+    const hours = Math.floor(remainingTime / 3600);
+    const minutes = Math.floor((remainingTime % 3600) / 60);
+    const seconds = remainingTime % 60;
+
+    const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    countdownElement.textContent = formattedTime;
+
+    if (remainingTime <= 0) {
+      countdownElement.textContent = "00:00:00";
+      clearInterval(interval);
+    } else {
+      remainingTime--;
+    }
+  }
+
+  updateCountdown();
+  const interval = setInterval(updateCountdown, 1000);
 }
 
-// Atualize o relógio a cada segundo
-setInterval(updateClock, 1000);
-
-// Atualize o relógio imediatamente após o carregamento da página
-updateClock();
-
-
-
-
-
+startCountdown(43800); // Iniciar a contagem regressiva de 60 segundos
