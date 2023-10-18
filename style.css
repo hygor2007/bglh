@@ -4,6 +4,7 @@ body {
    margin: 0;
    padding: 0;
    font-family: Arial, sans-serif;
+  
 }
 header {
 
@@ -17,7 +18,7 @@ header {
    padding: 10px 0;
 
 
-   position: fixed;
+   position: fixed absolute;
 
 
    width: 100%;
@@ -83,21 +84,6 @@ header {
 .content {
    margin-top: 80px; 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .footer {
    background-color: rgb(0, 247, 255);
@@ -279,7 +265,7 @@ footer {
 
 button {
     background-color: #007bff; /* Cor de fundo azul */
-    color: #fff; /* Cor do texto branco */
+    color: rgb(255, 255, 255); /* Cor do texto branco */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -288,31 +274,62 @@ button {
     margin-top: 150px;
     position: fixed;
     top: 40px;
-    left: 30px;
+    left: 300px;
 }
 
-button:hover {
-    background-color: #0056b3;  
-  font-size: large;
+.btn{
+  width: 200px;
+  height: 50px;
+  font-size: 30px;
+  border: none;
+  border-radius: 1000px;
+  color:#000000 ;
+  transition: all 0.6s
+  ease-in-out 0s;
+  box-shadow: inset 0 0 20px;
+}
+.btn:hover{
+  background:transparent;
+  color: #000000;
+  transform: scale(1.5)rotate(360deg);
+  box-shadow: 0 0 60px rgb(0, 247, 255);
+  cursor: grab;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: #ff2929;
 }
 
 
 
 
-#countdown {
-  font-size: 2em;
-  position: fixed;
-  top: -120px;
-  margin-top: 310px;
-  left: 750px; 
-background-color: #007bff;
-cursor: pointer;
-border-radius: 5px;
-color: #fff;
+
+
+
+
+
+
+
+.main {
+  display: flex;
+  flex: 1;
+  width: 100%;
 }
-#countdown:hover{
-
-background-color: #0056b3;
 
 
+.container {
+  background: url("https://i.imgur.com/fzJ24fY.jpg") no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.button{
+    width: 200px;
+    height: 200px;
 }
